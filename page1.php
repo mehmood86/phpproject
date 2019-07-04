@@ -42,16 +42,20 @@
  <body>
 	<form class="form-horizontal" action="page2.php" method="post">
 	<fieldset>
+    <div class="col-md-4" id="msg">
+      
+    </div>
+
   <div class="form-group">
-  	<label class="col-md-4 control-label" for="product_id">Username</label>
+  	<label class="col-md-4 control-label" for="username">Username</label>
   	<div class="col-md-4">
   	   <input id="username" name="username" placeholder="Username" class="form-control input-md" required="" type="text">
 	  </div>
 	</div>
 	<div class="form-group">
-		<label class="col-md-4 control-label" for="product_id">Password</label>
+		<label class="col-md-4 control-label" for="password">Password</label>
 		<div class="col-md-4">
-		    <input id="password" name="password" placeholder="Password" class="form-control input-md" required="" type="text">
+		    <input id="password" name="password" placeholder="Password" class="form-control input-md" required="" type="password">
 		</div>
 	</div>
 	<!-- Button -->
