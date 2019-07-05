@@ -42,9 +42,7 @@
  <body>
 	<form class="form-horizontal" action="page2.php" method="post">
 	<fieldset>
-    <div class="col-md-4" id="msg">
-      
-    </div>
+    
 
   <div class="form-group">
   	<label class="col-md-4 control-label" for="username">Username</label>

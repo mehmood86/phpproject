@@ -1,12 +1,13 @@
 <html>
 
 <?php
+	//session_start();
 	if ($_POST["username"] == "mghaffar" && $_POST["password"] == "admin") {
 		echo "Welcome   Mehmood Ghaffar";
 	}else {
-		echo "Login failed";
-		header('Location: ./page1.php');;
+		header('Location: ./page1.php');
 	}
+	
 
 
 ?>
