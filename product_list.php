@@ -1,10 +1,31 @@
+<html>
+  <body>
+    <form class="form-horizontal" action="product_list.php" method="post">
+  	<fieldset>
+    <div class="form-group">
+    	<div class="col-md-4">
+    	   <input id="search" name="txt" placeholder="search by specific ISN"  type="text">
+         <button id="search" name="search" class="btn btn-primary">Search</button>
+  	  </div>
+  	</div>
+  	</fieldset>
+
+  </body>
+</html>
 <?php
   require_once 'config.php';
 
-  $sql = "SELECT * FROM products";
-  $result = $conn->query($sql);
+  if(!empty($_POST['txt'])){
+    $search_isn = $_POST['txt'];
+    echo "Results for ISN: ".$search_isn;
+  }
+  else{
+    echo "All records";
+  }
 
-  echo '<table border="0" cellspacing="2" cellpadding="2">
+
+
+  echo '<table border="2" cellspacing="2" cellpadding="2">
         <tr>
             <td> <h4><font face="Arial">Product Name  </font></h4> </td>
             <td> <h4><font face="Arial">Category      </font></h4></td>
@@ -12,8 +33,17 @@
             <td> <h4><font face="Arial">Image         </font></h4> </td>
         </tr>';
 
+  $sql='';
+  if(!empty($search_isn)){
+    $sql = "SELECT * FROM products WHERE p_isn='$search_isn'";
+  }
+  else{
+    $sql = "SELECT * FROM products";
+  }
 
-  if ($result->num_rows > 0) {
+  $result = $conn->query($sql);
+
+  if($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $d1 = $row["p_name"];
@@ -28,9 +58,11 @@
                 <td>'.$d4.'</td>
               </tr>';
       }
-    } else {
+    }
+    else {
         echo "0 results";
     }
+
     $conn->close();
 
 ?>
