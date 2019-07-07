@@ -1,20 +1,18 @@
 <?php
-session_start();
-
-if(isset($_SESSION['username'])){
-  echo "<h2>Logged in as: ".$_SESSION['username']."</h2>";
-}
-else{
-	echo "<script>location.href='login.php'</script>";
-}
-
- ?>
+	session_start();
+	if(isset($_SESSION['username'])){
+	  echo "<h2>Logged in as: ".$_SESSION['username']."</h2>";
+	}
+	else{
+		echo "<script>location.href='login.php'</script>";
+	}
+?>
 <html>
 
 	<form class="form-horizontal" action="add_product.php" method="post">
 		<fieldset>
 			<a href='./welcome.php'>Home</a>
-		
+
 			<div class="form-group" >
 				<label class="col-md-4 control-label" for="product_name">Product Name</label>
 				<div class="col-md-4">

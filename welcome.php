@@ -6,7 +6,8 @@ session_start();
 
 if(isset($_SESSION['username'])){
   echo "<h2>Logged in as: ".$_SESSION['username']."</h2>";
-  echo "<fieldset>Add a <a href='Product.php'> Product</a><br>";
+  echo "<fieldset>Add a <a href='Product.php'> Product</a>";
+  echo "<br> Product <a href='product_list.php'> List</a><br>";
   echo "<br><a href='logout.php'><input type=button value=logout name=logout></a>";
 }
 else{

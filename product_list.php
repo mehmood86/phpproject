@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if(isset($_SESSION['username'])){
+	  echo "<h2>Logged in as: ".$_SESSION['username']."</h2>";
+	}
+	else{
+		echo "<script>location.href='login.php'</script>";
+	}
+?>
 <html>
   <body>
     <form class="form-horizontal" action="product_list.php" method="post">
