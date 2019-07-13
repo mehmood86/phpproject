@@ -15,6 +15,9 @@
     	<div class="col-md-4">
     	   <input id="search" name="txt" placeholder="search by specific ISN"  type="text">
          <button id="search" name="search" class="btn btn-primary">Search</button>
+				 <input type="button" onclick="window.location='welcome.php'" class="Redirect" value="Home"/>
+				 <input type="button" onclick="window.location.href='add_product.php'" class="Redirect" value="Add Product"/>
+				 
   	  </div>
   	</div>
   	</fieldset>
